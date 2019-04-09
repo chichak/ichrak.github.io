@@ -68,7 +68,7 @@ print(' '.join('%5s' % classes[labels[j]] for j in range(4)))
 ```
 
 
-![png](output_5_1.png)
+![png](/images/output_5_1.png)
 
 
 Define a Convolutional Neural Network : Make **3-channel** images 
