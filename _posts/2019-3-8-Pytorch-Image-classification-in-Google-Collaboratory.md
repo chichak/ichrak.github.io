@@ -38,16 +38,7 @@ testloader = torch.utils.data.DataLoader(testset, batch_size=4,
 classes = ('plane', 'car', 'bird', 'cat',
            'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 ```
-
-    0it [00:00, ?it/s]
-
-    Downloading https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz to ./data/cifar-10-python.tar.gz
-    
-
-    100%|█████████▉| 170434560/170498071 [00:36<00:00, 4553100.12it/s]
-
-    Files already downloaded and verified
-    
+ 
 
 Let us show some of the training images, for fun.
 
@@ -76,14 +67,11 @@ imshow(torchvision.utils.make_grid(images))
 print(' '.join('%5s' % classes[labels[j]] for j in range(4)))
 ```
 
-     bird  deer horse  frog
-    
-
 
 ![png](output_5_1.png)
 
 
-Define a Convolution Neural Network : Make **3-channel** images 
+Define a Convolutional Neural Network : Make **3-channel** images 
 
 
 ```python
@@ -116,7 +104,6 @@ net = Net()
 ```
 
 Define a Loss function and optimizer : Classification **Cross-Entropy loss** and **SGD** with momentum.
-
 
 
 
@@ -159,20 +146,7 @@ for epoch in range(2):  # loop over the dataset multiple times
 print('Finished Training')
 ```
 
-    [1,  2000] loss: 2.232
-    [1,  4000] loss: 1.860
-    [1,  6000] loss: 1.688
-    [1,  8000] loss: 1.609
-    [1, 10000] loss: 1.537
-    [1, 12000] loss: 1.494
-    [2,  2000] loss: 1.408
-    [2,  4000] loss: 1.383
-    [2,  6000] loss: 1.348
-    [2,  8000] loss: 1.337
-    [2, 10000] loss: 1.316
-    [2, 12000] loss: 1.319
-    Finished Training
-    
+See how performant is it !
 
 **Test**
 
@@ -184,10 +158,9 @@ images, labels = dataiter.next()
 # print images
 imshow(torchvision.utils.make_grid(images))
 print('GroundTruth: ', ' '.join('%5s' % classes[labels[j]] for j in range(4)))
-```
+```    
 
-    GroundTruth:    cat  ship  ship plane
-    
+As example, this one:
 
 
 ![png](output_13_1.png)
@@ -205,8 +178,6 @@ _, predicted = torch.max(outputs, 1)
 print('Predicted: ', ' '.join('%5s' % classes[predicted[j]]
                               for j in range(4)))
 ```
-
-    Predicted:    cat  ship plane plane
     
 
 
@@ -223,10 +194,9 @@ with torch.no_grad():
 
 print('Accuracy of the network on the 10000 test images: %d %%' % (
     100 * correct / total))
-```
+```    
 
-    Accuracy of the network on the 10000 test images: 54 %
-    
+Later, we will see how to run it on GPU !
 
 
 ```python
@@ -237,5 +207,4 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
 ```
 
-    cuda:0
     
