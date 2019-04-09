@@ -163,7 +163,7 @@ print('GroundTruth: ', ' '.join('%5s' % classes[labels[j]] for j in range(4)))
 As example, this one:
 
 
-![png](output_13_1.png)
+![png](/images/output_13_1.png)
 
 
 
