@@ -74,9 +74,9 @@ sass:
 
 # Use the following plug-ins
 gems:
-	- source "https://rubygems.org"
-	- gem "github-pages", group: :jekyll_plugins
-    - jekyll-include-cache
+  - source "https://rubygems.org"
+  - gem "github-pages", group: :jekyll_plugins
+  - jekyll-include-cache
 
   #- jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   #- jekyll-feed # Create an Atom feed using the official Jekyll feed gem
